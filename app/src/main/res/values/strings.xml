@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Noteit</string>
+    <string name="btn_add_string">Not Ekle</string>
+    <string name="open">Aç</string>
+    <string name="close">Kapat</string>
+
+    //add note string
+    <string name="et_add_note_hint">Not Yaz</string>
+    <string name="btn_add_note">Ekle</string>
+
+    //login activity string
+    <string name="login_activity_title">Giriş Yap</string>
+    <string name="et_login_email">Email</string>
+    <string name="et_login_password">Şifre</string>
+    <string name="btn_login_to_signin_txt">Henüz üye değil misin?</string>
+
+    //Main activity string
+    <string name="main_activity_title">Notlar</string>
+
+    //signin activity string
+
+    <string name="signin_activity_title">Kayıt Ol</string>
+    <string name="et_login_name">İsim</string>
+
+</resources>
