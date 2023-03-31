@@ -14,7 +14,7 @@ import com.moonsoft.noteit.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var database: FirebaseFirestore
-    private lateinit var recyclerViewAdapter: NoteAdapter
+    private var recyclerViewAdapter: NoteAdapter? = null
 
     var postListesi = ArrayList<Note>()
     lateinit var binding: ActivityMainBinding
@@ -38,6 +38,11 @@ class MainActivity : AppCompatActivity() {
         recyclerViewAdapter = NoteAdapter(postListesi)
         binding.recyclerView.adapter = recyclerViewAdapter
 
+        recyclerViewAdapter!!.onClick = {
+            val intent = Intent(this, NoteDetailActivity::class.java)
+            intent.putExtra("note", it)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -89,10 +94,9 @@ class MainActivity : AppCompatActivity() {
                                         )
                                     postListesi.add(indirilenPost)
                                 }
-
                             }
                         }
-                        recyclerViewAdapter.notifyDataSetChanged()
+                        recyclerViewAdapter?.notifyDataSetChanged()
                     }
                 }
             }
